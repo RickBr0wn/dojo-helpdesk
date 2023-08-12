@@ -1,4 +1,3 @@
-import { Metadata } from 'next/types'
 import { Ticket } from '../ticket-list'
 import { notFound } from 'next/navigation'
 
