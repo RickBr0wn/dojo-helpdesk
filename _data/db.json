@@ -41,6 +41,20 @@
       "priority": "low",
       "user_email": "mario@netninja.dev",
       "id": "e9ZCKt2"
+    },
+    {
+      "title": "Ticket 1",
+      "description": "Ticket 1 description",
+      "priority": "low",
+      "user_email": "open",
+      "id": "Cbegrt8"
+    },
+    {
+      "title": "Ticket 2",
+      "description": "Ticket 2 description",
+      "priority": "low",
+      "user_email": "ricky.brown.00@gmail.com",
+      "id": "IUmXF6B"
     }
   ]
 }
