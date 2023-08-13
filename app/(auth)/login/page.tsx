@@ -1,5 +1,22 @@
+'use client'
+import AuthForm from '../auth-form'
+
 export default function Login() {
-  return <h1>Login</h1>
+  const handleSubmit = (
+    e: React.FormEvent<HTMLFormElement>,
+    email: string,
+    password: string
+  ) => {
+    e.preventDefault()
+    console.log({ type: 'log in', email, password })
+  }
+
+  return (
+    <main>
+      <h1 className="text-center">Log in</h1>
+      <AuthForm handleSubmit={handleSubmit} />
+    </main>
+  )
 }
 
 // Path: app/tickets/auth/sign-up/login.tsx
