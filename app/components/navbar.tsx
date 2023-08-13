@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Logo from './dojo-logo.png'
+import LogOutButton from './log-out-button'
+import { User } from '@supabase/supabase-js'
 
-export default function Navbar() {
+export default function Navbar({ user }: { user: User | undefined }) {
   return (
     <nav>
       <Image
@@ -14,7 +16,11 @@ export default function Navbar() {
       />
       <h1>Dojo Helpdesk</h1>
       <Link href="/">Dashboard</Link>
-      <Link href="/tickets">Tickets</Link>
+      <Link href="/tickets" className="mr-auto">
+        Tickets
+      </Link>
+      {user && <span>Hello, {user.email || 'user'}</span>}
+      <LogOutButton />
     </nav>
   )
 }
