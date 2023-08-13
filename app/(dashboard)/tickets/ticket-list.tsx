@@ -1,11 +1,16 @@
 import Link from 'next/link'
 
+// Fetch the tickets from the API
 async function getTickets(): Promise<Ticket[]> {
+  // Simulate a slow network
   await new Promise(resolve => setTimeout(resolve, 4000))
 
+  // Fetch the tickets
   const response = await fetch('http://localhost:4000/tickets', {
     next: { revalidate: 0 }, // data will be revalidated on every request
   })
+
+  // Return the tickets
   return response.json()
 }
 
@@ -18,7 +23,7 @@ export type Ticket = {
 }
 
 export default async function TicketList() {
-  // fetch data
+  // Fetch the tickets from the API
   const tickets = await getTickets()
 
   return (
